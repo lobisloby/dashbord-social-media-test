@@ -1,0 +1,8 @@
+@use "sass:math";
+
+// Source: https://css-tricks.com/snippets/sass/px-to-em-functions/
+
+@function toRem($value) {
+    $remValue: $value / 16 + rem;
+    @return $remValue;
+}

@@ -1,0 +1,3 @@
+@use 'util' as *; // <-- import everything from util (_index.scss)
+@use 'global';
+@use 'components';

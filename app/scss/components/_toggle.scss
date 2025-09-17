@@ -1,0 +1,48 @@
+@use'../util/' as *;
+
+
+
+input[type="checkbox"].toggle {
+    position: absolute;
+    left: -10000px;
+    opacity: 0;
+}
+
+input[type="checkbox"].toggle+label {
+    display: flex;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    font-size: toRem(21);
+}
+
+input[type="checkbox"].toggle+label::before {
+    content: '';
+    width: 4rem;
+    height: 1.5rem;
+    padding: 1rem;
+    border-radius: toRem(20);
+    background: linear-gradient(135deg,
+            hsl(210, 78%, 56%),
+            hsl(146, 68%, 55%));
+    margin-right: toRem(5);
+}
+
+input[type="checkbox"].toggle+label::after {
+    content: '';
+    position: absolute;
+    width: 1.8rem;
+    height: 1.8rem;
+    left: toRem(3);
+    top: toRem(1.8);
+    border-radius: 50%;
+    background-color: var(--toggle-button);
+    transition: all 1s ease-in-out;
+    outline: 1px solid var(--dark-bg);
+}
+
+input[type="checkbox"].toggle:checked+label::after {
+    transform: translateX(100%);
+    background-color: var(--dark-bg);
+    outline: 1px solid var(--dark-text2);
+}

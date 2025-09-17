@@ -1,0 +1,23 @@
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+
+h1 {
+
+    font-family: var(--font-inter);
+    margin: 0;
+    white-space: nowrap;
+}
+
+p {
+    margin: 0;
+}
