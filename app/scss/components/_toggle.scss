@@ -1,4 +1,4 @@
-@use'../util/' as *;
+@use '../util' as *;
 
 
 
@@ -45,4 +45,21 @@ input[type="checkbox"].toggle:checked+label::after {
     transform: translateX(100%);
     background-color: var(--dark-bg);
     outline: 1px solid var(--dark-text2);
+}
+
+.toggle-container {
+    display: inline-flex;
+    align-items: center;
+    margin-left: auto;
+
+    & label {
+        margin-right: 0;
+        font-size: toRem(20);
+        width: toRem(200);
+    }
+
+    @include breakpoint-down('small') {
+        width: 100%;
+        justify-content: flex-end;
+    }
 }

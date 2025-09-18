@@ -12,14 +12,19 @@
 
 .header {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
-    font-size: toRem(24);
+    font-size: toRem(32);
+    min-width: toRem(400);
+
+    @include breakpoint-down('small') {
+        flex-flow: column wrap;
+    }
 
 
     &__title {
         font-family: var(--font-inter);
-        font-size: toRem(12);
+        font-size: toRem(16);
 
         @include breakpoint('large') {
             font-size: toRem(18);
@@ -28,6 +33,7 @@
         &--subtitle {
             font-size: toRem(12);
             color: var(--dark-text1);
+            margin-bottom: toRem(20);
         }
     }
 
