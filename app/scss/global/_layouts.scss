@@ -3,10 +3,18 @@
 .container {
     margin: toRem(80);
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    gap: toRem(20);
 
-    @include breakpoint-down('small') {
-        margin: toRem(50);
+
+    @include breakpoint-down('medium') {
+        margin: toRem(20);
+    }
+
+    &__card {
+        @include breakpoint-down('medium') {
+            flex-flow: row wrap;
+        }
     }
 }
 
@@ -17,14 +25,15 @@
     font-size: toRem(32);
     min-width: toRem(400);
 
-    @include breakpoint-down('small') {
+    @include breakpoint-down('medium') {
         flex-flow: column wrap;
+        justify-content: flex-end;
     }
 
 
     &__title {
         font-family: var(--font-inter);
-        font-size: toRem(16);
+        font-size: toRem(14);
 
         @include breakpoint('large') {
             font-size: toRem(18);

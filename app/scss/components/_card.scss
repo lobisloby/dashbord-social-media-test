@@ -1,5 +1,95 @@
 @use'../util/' as *;
 
 .card {
-    padding: reem(20);
+    width: toRem(300);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-card);
+    padding: toRem(20);
+    border-radius: toRem(10);
+    box-shadow: 0 toRem(2) toRem(4) rgba(231, 227, 227, 0.1);
+
+    &__facebook {
+        border-top: toRem(5) solid var(--facebook);
+        border-radius: toRem(10) toRem(10) 0 0;
+    }
+
+    &__twiter {
+        border-top: toRem(5) solid var(--twitter);
+        border-radius: toRem(10) toRem(10) 0 0;
+    }
+
+    &__instagram {
+        position: relative;
+        border-radius: toRem(10) toRem(10) 0 0;
+        overflow: hidden; // important to clip the pseudo-element
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: toRem(5);
+            background: linear-gradient(to right,
+                    var(--instagram-start),
+                    var(--instagram-middle),
+                    var(--instagram-end));
+        }
+    }
+
+    &__youtube {
+        border-top: toRem(5) solid var(--youtube);
+        border-radius: toRem(10) toRem(10) 0 0;
+    }
+
+    @include breakpoint-down('small') {
+        width: toRem(350);
+    }
+
+    &__title {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: toRem(20);
+
+        &--name {
+            margin-left: toRem(8);
+            color: var(--dark-text1);
+            font-weight: bold;
+        }
+
+        &--situp {
+            font-size: toRem(12);
+            color: var(--limegreen);
+        }
+
+        &--sitdown {
+            font-size: toRem(12);
+            color: var(--brightred);
+        }
+    }
+
+    &__mainNum {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+        font-size: toRem(32);
+        margin-bottom: toRem(8);
+
+        &--followers {
+            font-size: toRem(11);
+            letter-spacing: toRem(6);
+            text-transform: uppercase;
+            color: var(--dark-text1);
+        }
+    }
+
+    &:hover {
+        background-color: var(--dark-card-hover);
+    }
 }
