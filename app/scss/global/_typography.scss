@@ -1,3 +1,6 @@
+@use '../util' as *;
+
+
 h1,
 h2,
 h3 {
@@ -20,4 +23,10 @@ h1 {
 
 p {
     margin: 0;
+}
+
+h2 {
+    font-family: var(--font-inter);
+    font-size: toRem(28);
+    letter-spacing: toRem(1);
 }

@@ -1,13 +1,13 @@
 @use'../util/' as *;
 
 .card {
-    width: toRem(300);
+    width: toRem(320);
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
     background-color: var(--dark-card);
-    padding: toRem(20);
+    padding: toRem(30);
     border-radius: toRem(10);
     box-shadow: 0 toRem(2) toRem(4) rgba(231, 227, 227, 0.1);
 
@@ -45,8 +45,12 @@
         border-radius: toRem(10) toRem(10) 0 0;
     }
 
+    @include breakpoint-down('medium') {
+        width: toRem(360);
+    }
+
     @include breakpoint-down('small') {
-        width: toRem(350);
+        width: 80%;
     }
 
     &__title {
@@ -54,7 +58,8 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: toRem(20);
+        margin-bottom: toRem(10);
+        margin-top: toRem(15);
 
         &--name {
             margin-left: toRem(8);
@@ -86,6 +91,63 @@
             letter-spacing: toRem(6);
             text-transform: uppercase;
             color: var(--dark-text1);
+        }
+    }
+
+    &:hover {
+        background-color: var(--dark-card-hover);
+    }
+}
+
+
+.cardsm {
+    width: toRem(260);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-card);
+    padding: toRem(30);
+    border-radius: toRem(5);
+    box-shadow: 0 toRem(2) toRem(4) rgba(231, 227, 227, 0.1);
+
+    @include breakpoint-down('medium') {
+        width: 80%;
+    }
+
+    @include breakpoint-down('small') {
+        width: 100%;
+    }
+
+    &__container {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: toRem(8);
+        margin-top: toRem(8);
+
+        &-title {
+            font-size: toRem(15);
+            font-weight: bold;
+            margin: 0;
+            color: var(--dark-text1);
+        }
+
+        &-Num {
+            font-size: toRem(32);
+            font-weight: bold;
+            margin: 0;
+        }
+
+        &-prs {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: toRem(10);
+            margin-top: toRem(15);
         }
     }
 
