@@ -12,6 +12,10 @@
   --toggle-bg-end: hsl(146, 68%, 55%);
   --toggle-light: hsl(230, 19%, 60%);
   --toggle-button-light: hsl(228, 46%, 96%);
+  /* Dark toggle equivalents (used in prefers-color-scheme: dark) */
+  --dark-toggle: hsl(0, 0%, 100%);
+  --dark-toggle-bg: hsl(230, 22%, 74%);
+  --dark-toggle-button: hsl(230, 17%, 14%);
   --dark-bg: hsl(230, 17%, 14%);
   --dark-top-bg: hsl(232, 19%, 15%);
   --dark-card: hsl(228, 28%, 20%);
@@ -32,4 +36,39 @@
   --toggle: var(--toggle-light);
   --toggle-bg: var(--toggle-bg-light);
   --toggle-button: var(--toggle-button-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--dark-bg);
+    --text-color: var(--dark-text2);
+    --text-color2: var(--dark-text1);
+    --card-bg: var(--dark-card);
+    --card-hover: var(--dark-card-hover);
+    --toggle: var(--dark-toggle);
+    --toggle-bg: var(--dark-toggle-bg);
+    --toggle-button: var(--dark-toggle-button);
+  }
+}
+
+[data-theme="dark"] {
+  --background: var(--dark-bg);
+  --text-color: var(--dark-text2);
+  --text-color2: var(--dark-text1);
+  --card-bg: var(--dark-card);
+  --card-hover: var(--dark-card-hover);
+  --toggle: var(--dark-toggle);
+  --toggle-bg: var(--dark-toggle-bg);
+  --toggle-button: var(--dark-toggle-button);
+}
+
+[data-theme="light"] {
+  --background: var(--light-bg);
+  --text-color: var(--light-text2);
+  --text-color2: var(--light-text1);
+  --card-bg: var(--light-card);
+  --card-hover: var(--light-card-hover);
+  --toggle: var(--light-toggle);
+  --toggle-bg: var(--light-toggle-bg);
+  --toggle-button: var(--light-toggle-button);
 }

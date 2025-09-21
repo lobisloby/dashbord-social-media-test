@@ -6,10 +6,11 @@
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--dark-card);
+    background-color: var(--card-bg);
     padding: toRem(30);
     border-radius: toRem(10);
     box-shadow: 0 toRem(2) toRem(4) rgba(231, 227, 227, 0.1);
+    transition: background-color 0.3s linear, color 0.3s linear;
 
     &__facebook {
         border-top: toRem(5) solid var(--facebook);
@@ -63,7 +64,7 @@
 
         &--name {
             margin-left: toRem(8);
-            color: var(--dark-text1);
+            color: var(--text-color2);
             font-weight: bold;
         }
 
@@ -90,12 +91,12 @@
             font-size: toRem(11);
             letter-spacing: toRem(6);
             text-transform: uppercase;
-            color: var(--dark-text1);
+            color: var(--text-color2);
         }
     }
 
     &:hover {
-        background-color: var(--dark-card-hover);
+        background-color: var(--card-hover);
     }
 }
 
@@ -106,7 +107,7 @@
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--dark-card);
+    background-color: var(--card-bg);
     padding: toRem(30);
     border-radius: toRem(5);
     box-shadow: 0 toRem(2) toRem(4) rgba(231, 227, 227, 0.1);
@@ -132,7 +133,7 @@
             font-size: toRem(15);
             font-weight: bold;
             margin: 0;
-            color: var(--dark-text1);
+            color: var(--text-color2);
         }
 
         &-Num {
@@ -152,6 +153,6 @@
     }
 
     &:hover {
-        background-color: var(--dark-card-hover);
+        background-color: var(--card-hover);
     }
 }
